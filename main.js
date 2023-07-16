@@ -18,13 +18,13 @@ window.addEventListener("DOMContentLoaded", init);
 let map;
 let sidebar;
 let panelID = "my-info-panel";
+var initX = 51.5;
+var initY = -0.1;
 
 /*
  * init() is called when the page has loaded
  */
 function init() {
-  var initX = 51.5;
-  var initY = -0.1;
 
   // Check if geolocation API is available
   if ("geolocation" in navigator) {
