@@ -161,7 +161,7 @@ function addPoints(data) {
   // marker: standard point with an icon
   // circleMarker: a circle with a radius set in pixels
   // circle: a circle with a radius set in meters
-  let markerType = "marker";
+  let markerType = "circle";
 
   // Marker radius
   // Wil be in pixels for circleMarker, metres for circle
@@ -207,7 +207,7 @@ function addPoints(data) {
 
     // AwesomeMarkers is used to create fancier icons
     let icon = L.AwesomeMarkers.icon({
-      icon: "icon-star",
+      icon: "star",
       iconColor: "red",
       markerColor: data[row].color,
       prefix: "fa",
