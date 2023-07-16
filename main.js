@@ -23,8 +23,25 @@ let panelID = "my-info-panel";
  * init() is called when the page has loaded
  */
 function init() {
-  // Create a new Leaflet map centered on the continental US
-  map = L.map("map").setView([51.5, -0.1], 14);
+  var initX = 51.5;
+  var initY = -0.1;
+
+  // Check if geolocation API is available
+  if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition((position) => {
+     initX = position.coords.latitude;
+     initY = position.coords.longitude;
+    });
+  } else {
+    initX = 51.5;
+    initY = -0.1;
+  }
+  
+  // Create a new Leaflet map centered on the retrieved coordinates
+  map = L.map("map", {
+    center: [initX, initY], 
+    zoom: 14
+  });
 
   // This is the Carto Positron basemap
   L.tileLayer(
